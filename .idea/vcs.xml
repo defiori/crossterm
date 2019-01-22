@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_cursor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_input" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_screen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_style" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_terminal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/crossterm_utils" vcs="Git" />
+  </component>
+</project>

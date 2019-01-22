@@ -1,9 +1,5 @@
-I would really appreciate any contributing to this crate. But there are some things that are handy to know.
+I would really appreciate any contributing to this crate. However there are some things that are handy to know.
 
-## Branch
-- If you have small commits (e.g. bugfixes, grammar improvements, examples, comments) please create a pull request to the development branch.
-- If you have a large feature you could better create a separate branch for that and pull request this one into development.
-    
 ## How it works
 Crossterm is using ANSI escape codes by default for both Unix and Windows systems. 
 But for Windows, it is a bit more complicated since Windows versions 8 or lower are not supporting ANSI escape codes. 

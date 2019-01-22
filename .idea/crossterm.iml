@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_utils/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_utils/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_utils/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_utils/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_cursor/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_cursor/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_cursor/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_cursor/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/snake/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/snake/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/snake/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/snake/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_terminal/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_terminal/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_terminal/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_terminal/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/first_depth_search/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/first_depth_search/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/first_depth_search/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/program_examples/first_depth_search/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_screen/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_screen/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_screen/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_screen/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_winapi/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_winapi/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_winapi/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_winapi/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_style/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_style/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_style/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_style/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_input/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_input/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_input/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crossterm_input/benches" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_cursor/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_input/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_screen/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_style/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_terminal/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_utils/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crossterm_winapi/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/program_examples/first_depth_search/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/program_examples/snake/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
