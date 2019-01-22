@@ -10,6 +10,7 @@ keywords = ["console", "color", "cursor", "input", "terminal"]
 exclude = ["target", "Cargo.lock"]
 readme = "README.md"
 
+
 [workspace]
 
 members = [
