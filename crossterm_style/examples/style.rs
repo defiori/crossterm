@@ -3,7 +3,7 @@
 //!
 extern crate crossterm_style;
 
-use self::crossterm_style::{style, Color};
+use self::crossterm_style::{style, color, Color};
 
 /// print some red font | demonstration.
 pub fn paint_foreground() {
@@ -97,7 +97,7 @@ pub fn print_all_foreground_colors() {
         style(format!("White : \t {} \n", "■")).with(Color::White)
     );
 
-    #[cfg(unix)]
+    // supported by Unix and < Windows 10 terminals
     println!(
         "{}",
         style("RGB color (10,10,10) ").with(Color::Rgb {
@@ -106,8 +106,8 @@ pub fn print_all_foreground_colors() {
             b: 10
         })
     );
-
-    #[cfg(unix)]
+    
+    // supported by Unix and < Windows 10 terminals
     println!(
         "{}",
         style("RGB color (10,10,10) ").with(Color::AnsiValue(50))
@@ -177,7 +177,7 @@ pub fn print_all_background_colors() {
         style(format!("White : \t {} \n", "■")).on(Color::White)
     );
 
-    #[cfg(unix)]
+    // supported by Unix and < Windows 10 terminals 
     println!(
         "{}",
         style("RGB color (10,10,10) ").on(Color::Rgb {
@@ -186,8 +186,7 @@ pub fn print_all_background_colors() {
             b: 10
         })
     );
-
-    #[cfg(unix)]
+    // supported by Unix and < Windows 10 terminals
     println!(
         "{}",
         style("RGB color (10,10,10) ").on(Color::AnsiValue(50))
@@ -218,8 +217,7 @@ pub fn print_font_with_attributes() {
     println!("{}", style("Negative text").negative());
 }
 
-/// Print all supported RGB colors  | demonstration.
-#[cfg(unix)]
+/// Print all supported RGB colors, not supported for Windows systems < 10  | demonstration. 
 pub fn print_supported_colors() {
     let count = color().get_available_color_count().unwrap();
 
@@ -231,4 +229,8 @@ pub fn print_supported_colors() {
     }
 }
 
-fn main() {}
+fn main() {
+    print_all_background_colors();
+    print_all_foreground_colors();
+    print_font_with_attributes();
+}

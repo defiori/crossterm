@@ -15,24 +15,10 @@ use crossterm_utils::get_module;
 ///
 /// Check `/examples/cursor` in the library for more specific examples.
 ///
-/// ```rust
-/// extern crate crossterm;
-/// use self::crossterm::cursor;
-/// use self::crossterm::Screen;
-///
-/// let mut cursor = cursor();
-///
-/// // Get cursor and goto pos X: 5, Y: 10
-/// cursor.goto(5,10);
-///
-/// cursor.show();
-/// cursor.hide();
-/// cursor.blink(true);
-/// cursor.move_left(2);
-/// ```
-///
-/// When you want to use 'cursor' on 'alternate screen' use the `Screen` type instead and pass it to the `cursor::from_screen()` function.
-/// By doing that cursor actions will be performed on the alternate screen.
+/// # Remarks
+/// 
+/// When you want to use 'cursor' on 'alternate screen' use 'crossterm_screen' crate. 
+/// Which allowes you to move the cursor on alternate screen.
 pub struct TerminalCursor<'stdout> {
     terminal_cursor: Box<ITerminalCursor + Sync + Send>,
     stdout: Option<&'stdout Arc<TerminalOutput>>,

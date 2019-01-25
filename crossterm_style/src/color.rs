@@ -16,24 +16,11 @@ use std::sync::Arc;
 ///
 /// For styling text use the `::crossterm::style()` function. `TerminalColor` will set the colors of the screen permanently and the `style()` will only style the text given.
 ///
-/// Check `/examples/color` in the library for more specific examples.
+/// Check `/examples/style` in the library for more specific examples.
 ///
-///
-/// ```rust
-/// use crossterm::style::color;
-///
-/// let colored_terminal = color();
-///
-/// // set foreground color
-/// colored_terminal.set_fg(Color::Red);
-/// // set background color
-/// colored_terminal.set_bg(Color::Red);
-/// // reset color to default
-/// colored_terminal.reset();
-/// ```
-///
-/// When you want to use 'color' on 'alternate screen' use the `Screen` type instead and pass it to the `color::from_screen()` function.
-/// By doing that styling actions will be performed on the alternate screen.
+/// # Remarks
+/// 
+/// When you want to use 'color' on 'alternate screen' use 'crossterm_screen' crate. Which allowes you to style the alternate screen.
 pub struct TerminalColor<'stdout> {
     color: Box<ITerminalColor + Sync + Send>,
     stdout: Option<&'stdout Arc<TerminalOutput>>,
@@ -63,9 +50,11 @@ impl<'stdout> TerminalColor<'stdout> {
     /// **Note**
     ///
     /// Use this function when you want your terminal to operate with a specific output.
-    /// This could be useful when you have a screen which is in 'alternate mode'.
-    /// And you want your actions from the `TerminalColor`, created by this function, to operate on the 'alternate screen'.
+    /// This could be useful when you have a output which is in 'alternate mode', 
+    /// and you want your actions from the `TerminalColor`, created by this function, to operate on the 'alternate screen'.
     ///
+    /// - checkout `crossterm_screen` crate.
+    /// 
     /// # Example
     /// ```
     /// let screen = Screen::default();
@@ -92,39 +81,16 @@ impl<'stdout> TerminalColor<'stdout> {
     }
 
     /// Set the foreground color to the given color.
-    ///
-    /// ```rust
-    /// let colored_terminal = color();
-    ///
-    /// // Set foreground color of the font
-    /// colored_terminal.set_fg(Color::Red);
-    /// // crossterm provides to set the background from &str or String
-    /// colored_terminal.set_fg(Color::from("Red"));
-    /// ```
     pub fn set_fg(&self, color: Color) -> Result<()> {
         self.color.set_fg(color, &self.stdout)
     }
 
     /// Set the background color to the given color.
-    ///
-    /// ```rust
-    /// let colored_terminal = color();
-    ///
-    /// // Set background color of the font
-    /// colored_terminal.set_bg(Color::Red);
-    /// // crossterm provides to set the background from &str or String
-    /// colored_terminal.set_bg(Color::from("Red"));
-    /// ```
     pub fn set_bg(&self, color: Color) -> Result<()> {
         self.color.set_bg(color, &self.stdout)
     }
 
     /// Reset the terminal colors and attributes to default.
-    ///
-    /// ```rust
-    /// let colored_terminal = color();
-    /// colored_terminal.reset();
-    /// ```
     pub fn reset(&self) -> Result<()> {
         self.color.reset(&self.stdout)
     }

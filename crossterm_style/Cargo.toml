@@ -19,5 +19,5 @@ crossterm_winapi = { path = "../crossterm_winapi" }
 crossterm_utils = { path = "../crossterm_utils" }
 
 [[example]]
-name = "color"
+name = "style"
 path = "examples/style.rs"

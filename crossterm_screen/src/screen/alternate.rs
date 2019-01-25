@@ -5,12 +5,12 @@
 //! For an example of this behavior, consider when vim is launched from bash.
 //! Vim uses the entirety of the screen to edit the file, then returning to bash leaves the original buffer unchanged.
 
-use crossterm_utils::get_module;
-
 #[cfg(windows)]
-use crate::sys::{winapi::ToAlternateScreenCommand, IAlternateScreenCommand};
+use crossterm_utils::get_module;
+#[cfg(windows)]
+use crate::sys::{winapi::ToAlternateScreenCommand};
 
-use crate::sys;
+use crate::sys::{self, IAlternateScreenCommand};
 
 use super::{RawScreen, Screen, TerminalOutput};
 use std::convert::From;

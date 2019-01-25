@@ -10,6 +10,14 @@ keywords = ["console", "color", "cursor", "input", "terminal"]
 exclude = ["target", "Cargo.lock"]
 readme = "README.md"
 
+[features]
+default = ["cursor", "style","terminal","screen","input"]
+
+cursor = ["crossterm_cursor"]
+style = ["crossterm_style"]
+terminal = ["crossterm_terminal"]
+screen = ["crossterm_screen"]
+input = ["crossterm_input"]
 
 [workspace]
 

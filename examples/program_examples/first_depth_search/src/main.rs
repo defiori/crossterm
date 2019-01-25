@@ -78,8 +78,10 @@ fn print_welcome_screen() {
         let a = stdin.next();
 
         if let Some(Ok(b'q')) = a {
+            drop(screen);
             terminal.exit();
-        }
+            break;
+        }else {
         // print the current counter at the line of `Seconds to Go: {counter}`
         cursor.goto(48, 10);
         crossterm
@@ -87,6 +89,7 @@ fn print_welcome_screen() {
             .with(Color::Red)
             .on(Color::Blue)
             .paint(&screen.stdout);
+        }
 
         // 1 second delay
         thread::sleep(time::Duration::from_secs(1));

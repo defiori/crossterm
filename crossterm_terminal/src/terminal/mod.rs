@@ -1,14 +1,4 @@
 //! A module that contains all the actions related to the terminal. like clearing, resizing, pausing and scrolling the terminal.
-#[macro_use]
-extern crate crossterm_utils;
-extern crate crossterm_cursor;
-
-#[cfg(windows)]
-extern crate crossterm_winapi;
-
-#[cfg(unix)]
-extern crate libc;
-
 #[cfg(test)]
 mod test;
 

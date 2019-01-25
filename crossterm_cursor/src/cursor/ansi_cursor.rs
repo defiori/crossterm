@@ -3,10 +3,8 @@
 //! Note that the cursor position is 0 based. This means that we start counting at 0 when setting the cursor position etc.
 
 use super::ITerminalCursor;
-use crate::sys::{
-    get_cursor_position,
-    winapi::{Cursor, Handle},
-};
+use crate::sys::get_cursor_position;
+
 use crossterm_utils::{write, write_str, Result, TerminalOutput};
 use std::sync::Arc;
 

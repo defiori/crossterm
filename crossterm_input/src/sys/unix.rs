@@ -1,4 +1,8 @@
 use std::io;
+use std::fs;
+use crossterm_utils::sys::unix;
+use std::os::unix::io::AsRawFd;
+
 
 /// Get the TTY device.
 ///
@@ -21,23 +25,7 @@ pub fn get_tty() -> io::Result<fs::File> {
 pub fn read_char() -> io::Result<char> {
     let mut buf = [0u8; 20];
 
-    // get tty raw handle.
-    let tty_f;
-
-    let fd = unsafe {
-        if libc::isatty(libc::STDIN_FILENO) == 1 {
-            libc::STDIN_FILENO
-        } else {
-            tty_f = fs::File::open("/dev/tty")?;
-            tty_f.as_raw_fd()
-        }
-    };
-
-    let mut termios = Termios::from_fd(fd)?;
-    let original = termios;
-
-    make_raw(&mut termios);
-    tcsetattr(fd, TCSADRAIN, &termios)?;
+    let fd = unix::into_raw_mode()?;
 
     // read input and convert it to char
     let rv = unsafe {
@@ -68,7 +56,7 @@ pub fn read_char() -> io::Result<char> {
         }
     };
 
-    tcsetattr(fd, TCSADRAIN, &original)?;
+    unix::disable_raw_mode();
 
     // if the user hit ^C we want to signal SIGINT to outselves.
     if let Err(ref err) = rv {

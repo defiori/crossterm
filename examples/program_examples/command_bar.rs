@@ -1,9 +1,7 @@
 extern crate crossterm;
 
-use crossterm::cursor::{cursor, TerminalCursor};
-use crossterm::input::input;
-use crossterm::terminal::{from_screen, ClearType, Terminal};
-use crossterm::{Crossterm, Screen};
+use crossterm::{cursor, TerminalCursor, input, ClearType, Terminal, Crossterm, Screen};
+
 use std::io::Read;
 use std::sync::{Arc, Mutex};
 use std::{thread, time};
@@ -55,7 +53,7 @@ fn main() {
 fn log(input_buf: Arc<Mutex<String>>, screen: &Screen) -> Vec<thread::JoinHandle<()>> {
     let mut threads = Vec::with_capacity(10);
 
-    let (_, term_height) = from_screen(screen).terminal_size();
+    let (_, term_height) = Terminal::from_output(&screen.stdout).terminal_size();
 
     for i in 0..1 {
         let input_buffer = input_buf.clone();

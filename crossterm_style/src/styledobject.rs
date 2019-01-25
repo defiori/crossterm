@@ -18,22 +18,11 @@ pub struct StyledObject<D: Display> {
 
 impl<'a, D: Display + 'a> StyledObject<D> {
     /// Set the foreground of the styled object to the passed `Color`.
-    ///
-    /// ```rust
-    /// use self::crossterm::style::{style,Color};
-    ///
-    /// // create an styled object with the foreground color red.
-    /// let styledobject =  style("Some colored text").with(Color::Red);
-    /// // create an styled object with the foreground color blue.
-    /// let styledobject1 = style("Some colored text").with(Color::Blue);
-    ///
-    /// // print the styledobject to see the result
-    /// println!("{}", styledobject);
-    /// println!("{}", styledobject1);
-    ///
-    /// // print an styled object directly.
-    /// println!("{}", style("Some colored text").on(Color::Blue));
-    /// ```
+    /// 
+    /// # Remarks
+    /// 
+    /// This methods consumes 'self', and works like a builder. 
+    /// By having this functionality you can do: `with().on().attr()`
     pub fn with(mut self, foreground_color: Color) -> StyledObject<D> {
         self.object_style = self.object_style.fg(foreground_color);
         self
@@ -41,23 +30,10 @@ impl<'a, D: Display + 'a> StyledObject<D> {
 
     /// Set the background of the styled object to the passed `Color`.
     ///
-    /// #Example
-    ///
-    /// ```rust
-    /// use self::crossterm::style::{style,Color};
-    ///
-    /// // create an styled object with the background color red.
-    /// let styledobject =  style("Some colored text").on(Color::Red);
-    /// // create an styled object with the foreground color blue.
-    /// let styledobject1 = style("Some colored text").on(Color::Blue);
-    ///
-    /// // print the styledobject to see the result
-    /// println!("{}", styledobject);
-    /// println!("{}", styledobject1);
-    ///
-    /// // print an styled object directly.
-    /// println!("{}", style("Some colored text").on(Color::Blue));
-    /// ```
+    /// # Remarks
+    /// 
+    /// This methods consumes 'self', and works like a builder. 
+    /// By having this functionality you can do: `with().on().attr()`
     pub fn on(mut self, background_color: Color) -> StyledObject<D> {
         self.object_style = self.object_style.bg(background_color);
         self
@@ -65,14 +41,10 @@ impl<'a, D: Display + 'a> StyledObject<D> {
 
     /// Set the attribute of an styled object to the passed `Attribute`.
     ///
-    /// #Example
-    ///
-    /// ```rust
-    /// extern crate crossterm;
-    /// use self::crossterm::style::{style,Attribute};
-    ///
-    /// println!("{}", style("Some bold text").attr(Attribute::Bold);
-    /// ```
+    /// # Remarks
+    /// 
+    /// This methods consumes 'self', and works like a builder. 
+    /// By having this functionality you can do: `with().on().attr()`
     pub fn attr(mut self, attr: Attribute) -> StyledObject<D> {
         self.object_style.add_attr(attr);
         self

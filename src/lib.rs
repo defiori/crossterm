@@ -296,6 +296,7 @@
 //! ## License
 //!
 //! This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TimonPost/crossterm/blob/master/LICENSE) file for details
+#[macro_use]
 extern crate crossterm_utils;
 
 #[cfg(feature = "cursor")]

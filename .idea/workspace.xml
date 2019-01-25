@@ -75,88 +75,8 @@
       <change afterPath="$PROJECT_DIR$/crossterm_utils/src/output/winapi_output.rs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/crossterm_utils/src/sys/mod.rs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/crossterm_utils/src/sys/winapi.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crossterm.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Contributing.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Contributing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ReleaseNotes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ReleaseNotes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/color/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/cursor/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/examples.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/input/keyboard/async_input.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/input/keyboard/input.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/input/keyboard/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/input/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/command_bar.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/command_bar.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/algorithm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/algorithm.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/map.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/map.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/messages.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/messages.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/variables.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/first_depth_search/src/variables.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/src/map.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/src/map.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/src/messages.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/src/messages.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/src/snake.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/src/snake.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/program_examples/snake/src/variables.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/program_examples/snake/src/variables.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/some_types/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/terminal/alternate_screen.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/terminal/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/terminal/raw_mode.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/terminal/terminal.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/commands/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/commands/shared_commands.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/commands/unix_command.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/commands/win_commands.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/crossterm.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/error.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/functions.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/macros.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/screen/alternate.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/screen/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/screen/raw.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/screen/screen.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/traits.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/unix_kernel/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/unix_kernel/terminal.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/windows_kernel/ansi_support.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/windows_kernel/cursor.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/windows_kernel/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/windows_kernel/reading.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kernel/windows_kernel/writing.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/cursor/ansi_cursor.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/cursor/cursor.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/cursor/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/cursor/test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/cursor/winapi_cursor.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/input/input.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/input/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/input/unix_input.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/input/windows_input.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/output/ansi_output.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/output/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/output/output.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/output/test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/output/winapi_output.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/ansi_color.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/color.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/objectstyle.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/styledobject.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/style/winapi_color.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/terminal/ansi_terminal.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/terminal/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/terminal/terminal.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/terminal/test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/terminal/winapi_terminal.rs" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/crossterm_input/examples/async_input.rs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
-              <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="13" />
+              <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -219,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crossterm_input/examples/input.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="667">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -228,8 +148,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cargo.toml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="340">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -398,12 +318,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548176588647</updated>
-      <workItem from="1548176589788" duration="582000" />
+      <workItem from="1548176589788" duration="1278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="582000" />
+    <option name="totallyTimeSpent" value="1278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1066" extended-state="6" />
@@ -499,21 +419,21 @@
     <entry file="file://$PROJECT_DIR$/crossterm_input/examples/async_input.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="13" />
+          <caret line="121" selection-start-line="121" selection-end-line="121" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crossterm_input/examples/input.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="667">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Cargo.toml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="340">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>

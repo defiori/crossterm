@@ -3,6 +3,9 @@ extern crate crossterm_winapi;
 #[cfg(windows)]
 extern crate winapi;
 
+#[cfg(unix)]
+extern crate termios;
+
 pub mod commands;
 pub mod error;
 pub mod macros;

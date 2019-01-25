@@ -1,6 +1,8 @@
 use crossterm_utils::TerminalOutput;
 
 use std::sync::Arc;
+use std::fmt::Display;
+use std::io::{self,Write};
 
 /// This type could be used to access the `cursor, terminal, color, input, styling` module more easily.
 /// You need to pass a reference to the screen whereon you want to perform the actions to the `Crossterm` type.

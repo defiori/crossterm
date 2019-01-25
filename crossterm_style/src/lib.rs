@@ -3,6 +3,7 @@
 
 #[macro_use]
 extern crate crossterm_utils;
+#[cfg(target_os = "windows")]
 extern crate crossterm_winapi;
 
 mod color;
