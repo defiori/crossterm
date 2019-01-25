@@ -1,1 +1,0 @@
-{"rustc":11779505878581416876,"features":"[]","target":16513719651684175640,"profile":730395432119170063,"path":3799123512164104100,"deps":[["libc v0.2.46","libc",15886597236016163100]],"local":[{"MtimeBased":[[1548192637,651531092],".fingerprint/crossterm_utils-92bc3ba807873c08/dep-lib-crossterm_utils-92bc3ba807873c08"]}],"rustflags":[],"edition":"Edition2018"}

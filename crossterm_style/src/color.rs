@@ -12,15 +12,21 @@ use crossterm_utils::get_module;
 
 use std::sync::Arc;
 
-/// Struct that stores a platform-specific implementation for color related actions.
+/// Allows you to style the terminal.
 ///
-/// For styling text use the `::crossterm::style()` function. `TerminalColor` will set the colors of the screen permanently and the `style()` will only style the text given.
+/// # Features:
 ///
-/// Check `/examples/style` in the library for more specific examples.
+/// - Foreground color (16 base colors)
+/// - Background color (16 base colors)
+/// - 256 color support (Windows 10 and UNIX only)
+/// - RGB support (Windows 10 and UNIX only)
+/// - Text Attributes like: bold, italic, underscore and crossed word ect (Windows 10 and UNIX only)
+///
+/// Check `/examples/` in the library for more specific examples.
 ///
 /// # Remarks
-/// 
-/// When you want to use 'color' on 'alternate screen' use 'crossterm_screen' crate. Which allowes you to style the alternate screen.
+///
+/// When you want to 'style' on 'alternate screen' use the 'crossterm_screen' crate.
 pub struct TerminalColor<'stdout> {
     color: Box<ITerminalColor + Sync + Send>,
     stdout: Option<&'stdout Arc<TerminalOutput>>,
@@ -47,13 +53,13 @@ impl<'stdout> TerminalColor<'stdout> {
 
     /// Create a new instance of `TerminalColor` whereon coloring could be preformed on the given output.
     ///
-    /// **Note**
+    /// # Remarks
     ///
     /// Use this function when you want your terminal to operate with a specific output.
-    /// This could be useful when you have a output which is in 'alternate mode', 
+    /// This could be useful when you have a screen which is in 'alternate mode',
     /// and you want your actions from the `TerminalColor`, created by this function, to operate on the 'alternate screen'.
     ///
-    /// - checkout `crossterm_screen` crate.
+    /// You should checkout the 'crossterm_screen' crate for more information about this.
     /// 
     /// # Example
     /// ```

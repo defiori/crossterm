@@ -20,10 +20,15 @@ use std::sync::Arc;
 
 /// Enum that specifies a way of clearing.
 pub enum ClearType {
+    /// clear all cells in terminal.
     All,
+    /// clear all cells from the cursor position downwards in terminal.
     FromCursorDown,
+    /// clear all cells from the cursor position upwards in terminal.
     FromCursorUp,
+    /// clear current line cells in terminal.
     CurrentLine,
+    /// clear all cells from cursor position until new line in terminal.
     UntilNewLine,
 }
 

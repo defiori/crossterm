@@ -48,16 +48,12 @@ trait ITerminalColor {
     fn color_value(&self, color: Color, color_type: ColorType) -> String;
 }
 
-/// This could be used to style an `Displayable` type with colors and attributes.
+/// This could be used to style a type who is implementing `Display` with colors and attributes.
 ///
+/// # Example
 /// ```rust
-/// extern crate crossterm;
-/// use crossterm::Crossterm;
-///
-/// let crossterm = Crossterm::new();
-///
 /// // get an styled object which could be painted to the terminal.
-/// let styled_object = crossterm.style("Some Blue colored text on black background")
+/// let styled_object = style("Some Blue colored text on black background")
 ///     .with(Color::Blue)
 ///     .on(Color::Black);
 ///
@@ -126,7 +122,10 @@ pub enum Color {
 
     Grey,
     White,
-
+    /// Color representing RGB-colors;
+    /// r = red
+    /// g = green
+    /// b = blue
     Rgb { r: u8, g: u8, b: u8 },
     AnsiValue(u8),
 }

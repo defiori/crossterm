@@ -6,28 +6,33 @@ use std::{thread, time::Duration};
 
 use crossterm_utils::TerminalOutput;
 
-/// Struct that stores a platform-specific implementation for input related actions.
+/// Allows you to preform actions with the < option >.
 ///
-/// Check `/examples/input` the examples folder on github for more info.
+/// # Features:
 ///
-/// ```rust
-/// extern crate crossterm;
-/// use self::crossterm::Screen;
-/// use self::crossterm::input;
+/// - features
 ///
-/// let input = input();
-/// let result = input.read_line();
-/// let pressed_char = input.read_char();
-///```
+/// Check `/examples/` in the library for more specific examples.
 ///
-/// **!! Take note when using input with raw mode you should use the `Screen` type. !!**
+/// # Remarks
 ///
-/// ```
-/// let screen = Screen::new(true);
-/// let input = crossterm::input::from_screen(&screen);
-/// ```
-/// When you want to use 'input' related actions on 'alternate screen' use the `Screen` type instead, and pass it to the `terminal::from_screen()` function.
-/// By doing that terminal actions will be performed on the alternate screen.
+/// When you want to use '< name >' on 'alternate screen' use the 'crossterm_screen' crate.
+
+/// Allows you to read user input.
+///
+/// # Features:
+///
+/// - Read character
+/// - Read line
+/// - Read async
+/// - Read async until
+/// - Wait for key event (terminal pause)
+///
+/// Check `/examples/` in the library for more specific examples.
+///
+/// # Remarks
+///
+/// When you want to use 'input' on 'alternate screen' use the 'crossterm_screen' crate.
 pub struct TerminalInput<'stdout> {
     terminal_input: Box<ITerminalInput + Sync + Send>,
     stdout: Option<&'stdout Arc<TerminalOutput>>,
@@ -50,14 +55,15 @@ impl<'stdout> TerminalInput<'stdout> {
 
     /// Create a new instance of `TerminalInput` whereon input related actions could be preformed.
     ///
-    /// **Note**
+    /// # Remarks
     ///
     /// Use this function when you want your terminal to operate with a specific output.
-    /// This could be useful when you have a screen which is in 'alternate mode'.
-    /// And you want your actions from the `TerminalInput`, created by this function, to operate on the 'alternate screen'.
+    /// This could be useful when you have a screen which is in 'alternate mode',
+    /// and you want your actions from the `TerminalInput`, created by this function, to operate on the 'alternate screen'.
     ///
+    /// You should checkout the 'crossterm_screen' crate for more information about this.
     /// # Example
-    /// ```
+    /// ```rust
     /// let screen = Screen::default();
     //
     /// if let Ok(alternate) = screen.enable_alternate_modes(false) {
@@ -79,9 +85,12 @@ impl<'stdout> TerminalInput<'stdout> {
 
     /// Read one line from the user input.
     ///
-    /// Note that this function only works when rawscreen is not turned on.
-    /// When you do want to read a line in raw mode please checkout `read_async` or `read_async_until`.
+    /// # Remark
+    /// This function is not work when raw screen is turned on.
+    /// When you do want to read a line in raw mode please, checkout `read_async` or `read_async_until`.
+    /// Not sure what 'raw mode' is, checkout the 'crossterm_screen' crate.
     ///
+    /// # Example
     /// ```rust
     /// let input = input();
     ///  match input.read_line() {
@@ -119,8 +128,11 @@ impl<'stdout> TerminalInput<'stdout> {
 
     /// Read the input asynchronously from the user.
     ///
-    /// This call will not block the current thread.
-    ///  Under the hood a thread is fired which will read input on unix systems from TTY and on windows systems with '_getwch' and '_getwche'
+    /// # Remarks
+    /// - This call will not block the current thread.
+    ///   A thread will be fired to read input, on unix systems from TTY and on windows systems with '_getwch' and '_getwche'.
+    /// - Requires 'raw screen to be enabled'.
+    ///   Not sure what this is, please checkout the 'crossterm_screen' crate.
     ///
     /// ```rust
     /// // we need to enable raw mode otherwise the characters will be outputted by default before we are able to read them.
@@ -152,6 +164,13 @@ impl<'stdout> TerminalInput<'stdout> {
     /// Read the input asynchronously until a certain character is hit.
     ///
     /// This is the same as `read_async()` but stops reading when a certain character is hit.
+    ///
+    /// # Remarks
+    /// - This call will not block the current thread.
+    ///   A thread will be fired to read input, on unix systems from TTY and on windows systems with '_getwch' and '_getwche'.
+    /// - Requires 'raw screen to be enabled'.
+    ///   Not sure what this is, please checkout the 'crossterm_screen' crate.
+    /// - Thread is automatically destroyed when the 'delimiter' is hit.
     ///
     /// ```rust
     /// // we need to enable raw mode otherwise the characters will be outputted by default before we are able to read them.
@@ -192,7 +211,9 @@ impl<'stdout> TerminalInput<'stdout> {
 
     /// This will prevent the current thread from continuing until the passed `KeyEvent` has happened.
     ///
-    /// This function will put the terminal into raw mode so that any key presses will not be shown at the screen.
+    /// # Remark
+    /// - Requires 'raw screen to be enabled'.
+    ///   Not sure what this is, please checkout the 'crossterm_screen' crate.
     ///
     /// ```
     /// use crossterm::input::{TerminalInput, KeyEvent};

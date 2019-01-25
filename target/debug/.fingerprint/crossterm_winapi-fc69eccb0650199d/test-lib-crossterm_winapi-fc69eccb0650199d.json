@@ -1,1 +1,0 @@
-{"rustc":16506240824610328313,"features":"[]","target":6935524359934514893,"profile":7418817843862178828,"path":11829229007992197241,"deps":[["winapi v0.3.6","winapi",5119680162188904350]],"local":[{"MtimeBased":[[1546546110,350679400],".fingerprint\\crossterm_winapi-fc69eccb0650199d\\dep-test-lib-crossterm_winapi-fc69eccb0650199d"]}],"rustflags":[],"edition":"Edition2015"}

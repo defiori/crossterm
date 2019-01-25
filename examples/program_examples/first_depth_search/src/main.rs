@@ -32,7 +32,7 @@ fn start_algorithm(screen: &Screen) {
     // we first want to switch to alternate screen. On the alternate screen we are going to run or firstdepthsearch algorithm
     if let Ok(ref alternate_screen) = screen.enable_alternate_modes(true) {
         // setup the map size and the position to start searching for a path.
-        let map_size = Size::new(100, 40);
+        let map_size = Size::new(50, 40);
         let start_pos = Position::new(10, 10);
 
         // create and render the map. Or map border is going to have an █ look and inside the map is just a space.

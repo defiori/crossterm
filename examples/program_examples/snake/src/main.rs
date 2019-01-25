@@ -92,7 +92,7 @@ fn title_screen() -> Size {
     cursor.goto(17, 15);
     let width = crossterm.input().read_line().unwrap();
     println!("\r\nEnter map height:");
-    cursor.goto(17, 16);
+    cursor.goto(17, 17);
     let height = crossterm.input().read_line().unwrap();
 
     let parsed_width = width.parse::<usize>().unwrap();

@@ -33,6 +33,8 @@ When we want to print some text to the alternate screen we can't just write on i
 The same goes for coloring, cursor movement, input, and terminal actions.
 However it is possible to do so, and [crossterm](https://crates.io/crates/crossterm) offers some help with that. 
   
+In case you are wondering what 'alternate' or 'raw' screen is, you could checkout the [book](http://atcentra.com/crossterm/screen.html) describing this in more detail.
+  
 ## Table of contents:
 - [Getting started](#getting-started)
 - [Useful links](#useful-links)

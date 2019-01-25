@@ -1,6 +1,6 @@
-extern crate crossterm;
+extern crate crossterm_input;
 
-use self::crossterm::{input, KeyEvent, Screen, TerminalInput};
+use self::crossterm_input::{input, KeyEvent, Screen, TerminalInput};
 
 pub fn read_char() {
     let input = input();
