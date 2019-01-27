@@ -3,7 +3,7 @@
 //!
 extern crate crossterm_style;
 
-use self::crossterm_style::{style, color, Color};
+use self::crossterm_style::{color, style, Color};
 
 /// print some red font | demonstration.
 pub fn paint_foreground() {
@@ -106,7 +106,7 @@ pub fn print_all_foreground_colors() {
             b: 10
         })
     );
-    
+
     // supported by Unix and < Windows 10 terminals
     println!(
         "{}",
@@ -177,7 +177,7 @@ pub fn print_all_background_colors() {
         style(format!("White : \t {} \n", "■")).on(Color::White)
     );
 
-    // supported by Unix and < Windows 10 terminals 
+    // supported by Unix and < Windows 10 terminals
     println!(
         "{}",
         style("RGB color (10,10,10) ").on(Color::Rgb {
@@ -217,7 +217,7 @@ pub fn print_font_with_attributes() {
     println!("{}", style("Negative text").negative());
 }
 
-/// Print all supported RGB colors, not supported for Windows systems < 10  | demonstration. 
+/// Print all supported RGB colors, not supported for Windows systems < 10  | demonstration.
 pub fn print_supported_colors() {
     let count = color().get_available_color_count().unwrap();
 

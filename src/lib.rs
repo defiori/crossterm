@@ -18,14 +18,14 @@ mod crossterm;
 pub use self::crossterm_cursor::{cursor, TerminalCursor};
 #[cfg(feature = "input")]
 pub use self::crossterm_input::{input, AsyncReader, KeyEvent, TerminalInput};
+#[cfg(feature = "screen")]
+pub use self::crossterm_screen::{AlternateScreen, Screen};
 #[cfg(feature = "style")]
 pub use self::crossterm_style::{
     color, style, Attribute, Color, ColorType, ObjectStyle, StyledObject, TerminalColor,
 };
 #[cfg(feature = "terminal")]
 pub use self::crossterm_terminal::*;
-#[cfg(feature = "screen")]
-pub use self::crossterm_screen::{AlternateScreen, Screen};
 
-pub use self::crossterm_utils::{error, TerminalOutput};
 pub use self::crossterm::Crossterm;
+pub use self::crossterm_utils::{error, TerminalOutput};

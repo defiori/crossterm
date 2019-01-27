@@ -1,17 +1,12 @@
-use modules::output::ansi_output::AnsiOutput;
-
-use modules::output::IStdout;
-
-use Screen;
+use super::{AnsiOutput, IStdout, WinApiOutput};
 
 #[cfg(windows)]
 mod winapi_tests {
     use super::*;
-    use modules::output::winapi_output::WinApiOutput;
+
     /* ======================== WinApi =========================== */
     #[test]
     fn write_winapi() {
-        let _screen = Screen::default();
         let output = WinApiOutput::new();
 
         let bytes = "test".as_bytes();
@@ -21,7 +16,6 @@ mod winapi_tests {
 
     #[test]
     fn write_str_winapi() {
-        let _screen = Screen::default();
         let output = WinApiOutput::new();
 
         let bytes = "test".as_bytes();
@@ -33,7 +27,6 @@ mod winapi_tests {
 /* ======================== ANSI =========================== */
 #[test]
 fn write_ansi() {
-    let _screen = Screen::default();
     let output = AnsiOutput::new();
 
     let bytes = "test".as_bytes();
@@ -43,7 +36,6 @@ fn write_ansi() {
 
 #[test]
 fn write_str_ansi() {
-    let _screen = Screen::default();
     let output = AnsiOutput::new();
 
     let bytes = "test".as_bytes();
@@ -68,10 +60,12 @@ fn try_enable_ansi() -> bool {
     #[cfg(windows)]
     {
         if cfg!(target_os = "windows") {
-            use kernel::windows_kernel::ansi_support::try_enable_ansi_support;
+            use crate::sys::winapi::ansi::set_virtual_terminal_processing;
 
-            if !try_enable_ansi_support() {
-                return false;
+            // if it is not listed we should try with WinApi to check if we do support ANSI-codes.
+            match set_virtual_terminal_processing(true) {
+                Ok(_) => return true,
+                Err(e) => return false,
             }
         }
     }

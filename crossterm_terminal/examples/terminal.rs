@@ -127,4 +127,6 @@ pub fn exit() {
     terminal.exit();
 }
 
-fn main() {}
+fn main() {
+    resize_terminal()
+}

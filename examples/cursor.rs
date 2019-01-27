@@ -2,9 +2,9 @@
 //! Examples of actions that could be performed with te cursor.
 //!
 
-extern crate crossterm;
+extern crate crossterm_cursor;
 
-use crossterm::{cursor, TerminalCursor};
+use crossterm_cursor::{cursor, TerminalCursor};
 
 /// Set the cursor to position X: 10, Y: 5 in the terminal.
 pub fn goto() {
@@ -87,5 +87,6 @@ pub fn blink_cursor() {
 }
 
 fn main() {
-    print();
+    goto();
+    pos();
 }

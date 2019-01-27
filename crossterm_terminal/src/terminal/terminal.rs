@@ -1,7 +1,7 @@
 //! A module that contains all the actions related to the terminal.
 //! Like clearing and scrolling in the terminal or getting the window size from the terminal.
 
-use super::{ClearType, ITerminal, AnsiTerminal, WinApiTerminal};
+use super::{AnsiTerminal, ClearType, ITerminal, WinApiTerminal};
 use crossterm_utils::{write, Result, TerminalOutput};
 
 #[cfg(windows)]

@@ -1,8 +1,7 @@
-use std::io;
-use std::fs;
 use crossterm_utils::sys::unix;
+use std::fs;
+use std::io;
 use std::os::unix::io::AsRawFd;
-
 
 /// Get the TTY device.
 ///

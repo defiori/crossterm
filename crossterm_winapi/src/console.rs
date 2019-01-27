@@ -12,6 +12,8 @@ use winapi::um::{
     },
     winnt::HANDLE,
 };
+
+/// Could be used to do some basic things with the console.
 pub struct Console {
     handle: Handle,
 }

@@ -9,7 +9,6 @@ use crossterm_utils::{Result, TerminalOutput};
 #[cfg(windows)]
 use crossterm_utils::get_module;
 
-
 /// Allows you to preform actions with the terminal cursor.
 ///
 /// # Features:
@@ -26,7 +25,7 @@ use crossterm_utils::get_module;
 /// Check `/examples/cursor` in the library for more specific examples.
 ///
 /// # Remarks
-/// 
+///
 /// When you want to use 'cursor' on 'alternate screen' use the 'crossterm_screen' crate.
 pub struct TerminalCursor<'stdout> {
     terminal_cursor: Box<ITerminalCursor + Sync + Send>,

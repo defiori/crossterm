@@ -1,6 +1,6 @@
 extern crate crossterm;
 
-use crossterm::{cursor, TerminalCursor, input, ClearType, Terminal, Crossterm, Screen};
+use crossterm::{cursor, input, ClearType, Crossterm, Screen, Terminal, TerminalCursor};
 
 use std::io::Read;
 use std::sync::{Arc, Mutex};

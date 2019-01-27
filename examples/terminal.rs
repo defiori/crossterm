@@ -4,7 +4,7 @@
 
 extern crate crossterm;
 
-use crossterm::{terminal, ClearType, cursor};
+use crossterm::{cursor, terminal, ClearType};
 
 fn print_test_data() {
     for i in 0..100 {
@@ -124,4 +124,8 @@ pub fn resize_terminal() {
 pub fn exit() {
     let terminal = terminal();
     terminal.exit();
+}
+
+fn main() {
+    clear_all_lines();
 }

@@ -28,7 +28,9 @@ pub enum HandleType {
     CurrentInputHandle,
 }
 
-/// This abstracts away some WinaApi calls to set and get some console handle.
+/// This abstracts away some WinaApi calls to set and get some console handles.
+///
+// Wraps the underlying WinApi type: [HANDLE]
 pub struct Handle {
     handle: HANDLE,
 }
@@ -169,5 +171,18 @@ impl Deref for Handle {
 impl From<HANDLE> for Handle {
     fn from(handle: HANDLE) -> Self {
         Handle { handle }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::{Handle, HandleType};
+
+    #[test]
+    fn get_handle() {
+        let out_put_handle = Handle::new(HandleType::OutputHandle).unwrap();
+        let out_put_handle = Handle::new(HandleType::InputHandle).unwrap();
+        let curr_out_put_handle = Handle::new(HandleType::CurrentOutputHandle).unwrap();
+        let curr_out_put_handle = Handle::new(HandleType::CurrentInputHandle).unwrap();
     }
 }

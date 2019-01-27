@@ -11,7 +11,8 @@ pub fn crossterm() {
     let cursor = crossterm.cursor();
     let color = crossterm.color();
     let terminal = crossterm.terminal();
-    let style = crossterm.style("").with(Color::Black).on(Color::Green);
+    let terminal = crossterm.input();
+    let style = crossterm.style("Black font on green background").with(Color::Black).on(Color::Green);
 
-    // perform some actions with the instances above.
+    // TODO: perform some actions with the instances above.
 }

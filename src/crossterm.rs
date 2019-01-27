@@ -1,8 +1,8 @@
 use crossterm_utils::TerminalOutput;
 
-use std::sync::Arc;
 use std::fmt::Display;
-use std::io::{self,Write};
+use std::io::{self, Write};
+use std::sync::Arc;
 
 /// This type offers a easy way to use functionalities like `cursor, terminal, color, input, styling`.
 ///

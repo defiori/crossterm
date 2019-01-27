@@ -10,7 +10,8 @@ use crate::sys::winapi::ansi::set_virtual_terminal_processing;
 /// If the current platform is windows and it supports ansi escape codes it will return the ansi implementation and if not it will return the winapi implementation.
 /// If the current platform is unix it will return the ansi implementation.
 pub fn get_module<T>(winapi_impl: T, ansi_impl: T) -> Option<T> {
-    // check for some consoles on windows who do not support WinApi but do support ANSI
+    // Some terminals on windows like GitBash can't use WinaApi calls directly so when we try to enable the ANSI-flag for windows this won't work.
+    // Because of that we should check first if the TERM-variable is set and see if the current terminal is a terminal who does support ANSI.
     let supports_ansi = is_specific_term();
 
     match supports_ansi {
@@ -18,7 +19,7 @@ pub fn get_module<T>(winapi_impl: T, ansi_impl: T) -> Option<T> {
             return Some(ansi_impl);
         }
         false => {
-            // if it is we can still try with WinApi to check if it still does support ANSI-codes
+            // if it is not listed we should try with WinApi to check if we do support ANSI-codes.
             match set_virtual_terminal_processing(true) {
                 Ok(_) => {
                     return Some(ansi_impl);
@@ -71,7 +72,7 @@ pub fn write_str(stdout: &Option<&Arc<TerminalOutput>>, string: &str) -> io::Res
 // checks if the 'TERM' environment variable is set to check if the terminal supports ANSI-codes.
 // I got the list of terminals from here: https://github.com/keqingrong/supports-ansi/blob/master/index.js
 fn is_specific_term() -> bool {
-    const terms: [&'static str; 15] = [
+    const TERMS: [&'static str; 15] = [
         "xterm",  // xterm, PuTTY, Mintty
         "rxvt",   // RXVT
         "eterm",  // Eterm
@@ -87,7 +88,7 @@ fn is_specific_term() -> bool {
     ];
 
     match std::env::var("TERM") {
-        Ok(val) => val != "dumb" || terms.contains(&val.as_str()),
+        Ok(val) => val != "dumb" || TERMS.contains(&val.as_str()),
         Err(_) => false,
     }
 }

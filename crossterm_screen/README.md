@@ -84,10 +84,11 @@ These are the features of this crate:
 - Alternate screen
 - Raw screen   
     
+Planned features:
+- make is possible to switch between multiple buffers.
+
 ## Examples
 Check out the [examples](/examples/) for more information about how to use this crate.
-
-
 
 ## Tested terminals
 

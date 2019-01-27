@@ -81,14 +81,14 @@ fn print_welcome_screen() {
             drop(screen);
             terminal.exit();
             break;
-        }else {
-        // print the current counter at the line of `Seconds to Go: {counter}`
-        cursor.goto(48, 10);
-        crossterm
-            .style(format!("{}", i))
-            .with(Color::Red)
-            .on(Color::Blue)
-            .paint(&screen.stdout);
+        } else {
+            // print the current counter at the line of `Seconds to Go: {counter}`
+            cursor.goto(48, 10);
+            crossterm
+                .style(format!("{}", i))
+                .with(Color::Red)
+                .on(Color::Blue)
+                .paint(&screen.stdout);
         }
 
         // 1 second delay

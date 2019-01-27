@@ -40,3 +40,7 @@ pub fn print_wait_screen_on_alternate_window() {
         print_wait_screen(&alternate.screen);
     }
 }
+
+fn main() {
+    print_wait_screen_on_alternate_window();
+}

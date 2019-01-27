@@ -81,7 +81,7 @@ These are the features of this crate:
     - Text Attributes like: bold, italic, underscore and crossed word ect (Windows 10 and UNIX only)
     
 Planned features:
-- Easier usage
+- Easier usage; e.g. `println!("{}Bold{}Blue", Attribute::Bold, Color::Blue)`
 
 ## Examples
 Check out the [examples](/examples/) for more information about how to use this crate.

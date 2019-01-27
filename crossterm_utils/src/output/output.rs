@@ -1,31 +1,26 @@
 //! This module provides one place to work with the screen.
 //!
-//!   In Rust we can call `stdout()` to get a handle to the current default console handle.
-//!   When working with UNIX or Windows10 systems you could print some text to the screen by doing the following:
+//! In Rust we can call `stdout()` to get a handle to the current default console handle.
+//! However, we can't use `stdout()` to access the alternate screen handle therefore we also won't be able to use `print!(), println!(), or write!()`.
+//! The same goes for coloring, cursor movement, input, and terminal actions.
+//! All of those functions are writing to the standard output and not to our alternate screen we are currently on.
 //!
-//!   ```
-//!   write!(std::io::stdout(), "{}", "some text").
-//!   ```
+//! To get the handle to the `alternate screen` we first need to store this handle so that we are able to call it later on.
+//! Through this stored handle, crossterm can write to or execute commands at the current screen whether it be an alternate screen or main screen.
 //!
-//!   But things change when we are in alternate screen modes.
-//!   We can not simply use `stdout()` to get a handle to the 'alternate screen', since this call returns the current default console handle (main screen).
-//!
-//!   To get the handle to the `alternate screen` we first need to store this handle so that we are able to call it later on.
-//!   Through this stored handle, crossterm can write to or execute commands at the current screen whether it be an alternate screen or main screen.
-//!
-//!   For UNIX and Windows10 systems, we store the handle gotten from `stdout()`. For Windows systems who are not supporting ANSI escape codes, we can call `CONOUT$` to get the current screen `HANDLE`.
+//! For UNIX and Windows10 systems, we store the handle gotten from `stdout()`. For Windows systems who are not supporting ANSI escape codes, we can call `CONOUT$` to get the current screen `HANDLE`.
 
 use super::*;
 
 use std::default::Default;
 use std::io::Write;
 
-/// Struct that is a handle to a terminal screen.
-/// This handle could be used to write to the current screen
+/// Struct that is a handle to the current terminal screen.
 ///
 /// For UNIX and Windows 10 `stdout()` will be used as handle. And for Windows systems, not supporting ANSI escape codes, will use WinApi's `HANDLE` as handle.
 pub struct TerminalOutput {
     stdout: Box<IStdout + Send + Sync>,
+    /// checks if this output is in raw mode.
     pub is_in_raw_mode: bool,
 }
 

@@ -60,7 +60,7 @@ impl<'stdout> TerminalColor<'stdout> {
     /// and you want your actions from the `TerminalColor`, created by this function, to operate on the 'alternate screen'.
     ///
     /// You should checkout the 'crossterm_screen' crate for more information about this.
-    /// 
+    ///
     /// # Example
     /// ```
     /// let screen = Screen::default();

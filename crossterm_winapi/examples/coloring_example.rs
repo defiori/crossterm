@@ -47,3 +47,5 @@ fn set_foreground_color() -> std::io::Result<()> {
 
     Ok(())
 }
+
+fn main() {}

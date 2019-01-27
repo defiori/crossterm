@@ -18,10 +18,10 @@ pub struct StyledObject<D: Display> {
 
 impl<'a, D: Display + 'a> StyledObject<D> {
     /// Set the foreground of the styled object to the passed `Color`.
-    /// 
+    ///
     /// # Remarks
-    /// 
-    /// This methods consumes 'self', and works like a builder. 
+    ///
+    /// This methods consumes 'self', and works like a builder.
     /// By having this functionality you can do: `with().on().attr()`
     pub fn with(mut self, foreground_color: Color) -> StyledObject<D> {
         self.object_style = self.object_style.fg(foreground_color);
@@ -31,8 +31,8 @@ impl<'a, D: Display + 'a> StyledObject<D> {
     /// Set the background of the styled object to the passed `Color`.
     ///
     /// # Remarks
-    /// 
-    /// This methods consumes 'self', and works like a builder. 
+    ///
+    /// This methods consumes 'self', and works like a builder.
     /// By having this functionality you can do: `with().on().attr()`
     pub fn on(mut self, background_color: Color) -> StyledObject<D> {
         self.object_style = self.object_style.bg(background_color);
@@ -42,8 +42,8 @@ impl<'a, D: Display + 'a> StyledObject<D> {
     /// Set the attribute of an styled object to the passed `Attribute`.
     ///
     /// # Remarks
-    /// 
-    /// This methods consumes 'self', and works like a builder. 
+    ///
+    /// This methods consumes 'self', and works like a builder.
     /// By having this functionality you can do: `with().on().attr()`
     pub fn attr(mut self, attr: Attribute) -> StyledObject<D> {
         self.object_style.add_attr(attr);

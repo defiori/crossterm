@@ -39,9 +39,16 @@ fn print_wait_screen(screen: &mut Screen) {
 pub fn print_wait_screen_on_alternate_window() {
     let screen = Screen::default();
 
+    // by passing in 'true' the alternate screen will be in raw modes.
     if let Ok(ref mut alternate) = screen.enable_alternate_modes(true) {
         print_wait_screen(&mut alternate.screen);
-    }
-    drop(screen);
+    } // <- drop alternate screen; this will cause the alternate screen to drop.
+
+    drop(screen); // <- drop screen; this will cause raw mode to be turned off.
+
     println!("Whe are back at the main screen");
+}
+
+fn main() {
+    print_wait_screen_on_alternate_window();
 }

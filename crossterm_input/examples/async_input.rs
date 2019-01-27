@@ -7,8 +7,11 @@ use std::time::Duration;
 use std::{thread, time};
 
 /// this will capture the input until the given key.
+/// TODO: make sure terminal is in raw mode before this function is called.
+/// for more information checkout `crossterm_screen` or  use crossterm with the `screen` feature flag.
 pub fn read_async_until() {
-    // create raw screen
+    // TODO: make sure terminal is in raw mode.
+    // for more information checkout `crossterm_screen` or  use crossterm with the `screen` feature flag.
 
     // init some modules we use for this demo
     let input = input();
@@ -35,6 +38,8 @@ pub fn read_async_until() {
 }
 
 /// this will read pressed characters async until `x` is typed.
+/// TODO: make sure terminal is in raw mode before this function is called.
+/// for more information checkout `crossterm_screen` or  use crossterm with the `screen` feature flag.
 pub fn read_async() {
     let input = input();
 
@@ -54,6 +59,8 @@ pub fn read_async() {
     }
 }
 
+/// TODO: make sure terminal is in raw mode before this function is called.
+/// for more information checkout `crossterm_screen` or  use crossterm with the `screen` feature flag.
 pub fn read_async_demo() {
     // init some modules we use for this demo
     let input = input();
@@ -84,6 +91,8 @@ pub fn read_async_demo() {
     }
 }
 
+/// TODO: make sure terminal is in raw mode before this function is called.
+/// for more information checkout `crossterm_screen` or  use crossterm with the `screen` feature flag.
 pub fn async_reading_on_alternate_screen() {
     let screen = Screen::new(false);
 

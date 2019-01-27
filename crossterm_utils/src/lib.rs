@@ -17,6 +17,6 @@ mod output;
 pub use self::error::{ErrorKind, Result};
 pub use self::output::TerminalOutput;
 
-pub use self::functions::{write, write_str};
 #[cfg(windows)]
 pub use self::functions::get_module;
+pub use self::functions::{write, write_str};

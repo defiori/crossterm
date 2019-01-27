@@ -1,7 +1,5 @@
 use super::AnsiCursor;
 use super::ITerminalCursor;
-#[cfg(windows)]
-use crossterm_utils::sys::winapi::ansi::try_enable_ansi_support;
 
 /* ======================== WinApi =========================== */
 #[cfg(windows)]
@@ -70,10 +68,12 @@ fn try_enable_ansi() -> bool {
     #[cfg(windows)]
     {
         if cfg!(target_os = "windows") {
-            use crossterm_utils::sys::winapi::ansi::try_enable_ansi_support;
+            use crossterm_utils::sys::winapi::ansi::set_virtual_terminal_processing;
 
-            if !try_enable_ansi_support() {
-                return false;
+            // if it is not listed we should try with WinApi to check if we do support ANSI-codes.
+            match set_virtual_terminal_processing(true) {
+                Ok(_) => return true,
+                Err(e) => return false,
             }
         }
     }

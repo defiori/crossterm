@@ -11,3 +11,5 @@ pub fn change_console_mode() {
     // set the console mode (not sure if this is an actual value xp)
     console_mode.set_mode(10);
 }
+
+fn main() {}

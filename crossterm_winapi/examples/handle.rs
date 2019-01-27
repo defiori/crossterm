@@ -15,5 +15,5 @@ fn main() {
     let handle /*:HANDLE*/ = *out_put_handle;
 
     // you can also pass you own `HANDLE` to create an instance of `Handle`
-    let handle = Handle::from(/* winapi::um::winnt::HANDLE */);
+    let handle = Handle::from(handle); /* winapi::um::winnt::HANDLE */
 }

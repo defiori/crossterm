@@ -1,6 +1,6 @@
 extern crate crossterm;
 
-use self::crossterm::input;
+use self::crossterm::{input, Screen, TerminalInput, Crossterm, ClearType};
 
 use std::io::{stdout, Read, Write};
 use std::time::Duration;
@@ -9,9 +9,9 @@ use std::{thread, time};
 /// this will capture the input until the given key.
 pub fn read_async_until() {
     // create raw screen
+    let screen = Screen::new(true);
 
-    // init some modules we use for this demo
-    let input = input();
+    let input = TerminalInput::from_output(&screen.stdout);
 
     let mut stdin = input.read_until_async(b'\r').bytes();
 
@@ -36,7 +36,10 @@ pub fn read_async_until() {
 
 /// this will read pressed characters async until `x` is typed.
 pub fn read_async() {
-    let input = input();
+    // create raw screen
+    let screen = Screen::new(true);
+
+    let input = TerminalInput::from_output(&screen.stdout);
 
     let mut stdin = input.read_async().bytes();
 
@@ -55,8 +58,14 @@ pub fn read_async() {
 }
 
 pub fn read_async_demo() {
-    // init some modules we use for this demo
-    let input = input();
+    // create raw screen
+    let screen = Screen::new(true);
+
+    let crossterm = Crossterm::from_screen(&screen);
+
+    let input = crossterm.input();
+    let terminal = crossterm.terminal();
+    let cursor = crossterm.cursor();
 
     // this will setup the async reading.
     let mut stdin = input.read_async().bytes();
@@ -85,7 +94,10 @@ pub fn read_async_demo() {
 }
 
 pub fn async_reading_on_alternate_screen() {
-    let screen = Screen::new(false);
+    // create raw screen
+    let screen = Screen::new(true);
+
+    let input = TerminalInput::from_output(&screen.stdout);
 
     // switch to alternate screen
     if let Ok(alternate) = screen.enable_alternate_modes(true) {
@@ -117,4 +129,8 @@ pub fn async_reading_on_alternate_screen() {
             thread::sleep(Duration::from_millis(200));
         }
     }
+}
+
+fn main() {
+    async_reading_on_alternate_screen();
 }

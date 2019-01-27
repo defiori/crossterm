@@ -120,3 +120,18 @@ impl From<HANDLE> for ScreenBuffer {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::ScreenBuffer;
+
+    #[test]
+    fn screen_buffer_info() {
+        let buffer = ScreenBuffer::current().unwrap();
+        let info = buffer.info().unwrap();
+        info.terminal_size();
+        info.terminal_window();
+        info.attributes();
+        info.cursor_pos();
+    }
+}

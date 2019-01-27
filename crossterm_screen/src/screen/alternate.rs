@@ -6,9 +6,9 @@
 //! Vim uses the entirety of the screen to edit the file, then returning to bash leaves the original buffer unchanged.
 
 #[cfg(windows)]
-use crossterm_utils::get_module;
+use crate::sys::winapi::ToAlternateScreenCommand;
 #[cfg(windows)]
-use crate::sys::{winapi::ToAlternateScreenCommand};
+use crossterm_utils::get_module;
 
 use crate::sys::{self, IAlternateScreenCommand};
 

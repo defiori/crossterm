@@ -232,5 +232,7 @@ pub fn print_supported_colors() {
 }
 
 fn main() {
-
+    print_all_background_colors();
+    print_all_foreground_colors();
+    print_font_with_attributes();
 }

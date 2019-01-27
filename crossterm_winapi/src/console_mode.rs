@@ -72,3 +72,22 @@ impl From<Handle> for ConsoleMode {
         ConsoleMode { handle }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::ConsoleMode;
+
+    #[test]
+    fn set_get_mode() {
+        let mode = ConsoleMode::new().unwrap();
+
+        let original_mode = mode.mode().unwrap();
+
+        mode.set_mode(0x0004);
+        let console_mode = mode.mode().unwrap();
+
+        assert!((console_mode & 0x0004) != 0);
+
+        mode.set_mode(original_mode);
+    }
+}

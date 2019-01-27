@@ -58,7 +58,8 @@ use std::sync::Arc;
 ///     let input = crossterm::input::from_screen(&alternate_screen.screen);
 /// }
 /// ```
-///
+/// # Remarks
+/// Note that using `Screen` is preferred over manually using `AlternateScreen` or `RawScreen`.
 pub struct Screen {
     buffer: Vec<u8>,
     pub stdout: Arc<TerminalOutput>,

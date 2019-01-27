@@ -87,5 +87,6 @@ pub fn blink_cursor() {
 }
 
 fn main() {
-    print();
+    goto();
+    pos();
 }
