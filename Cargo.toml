@@ -50,3 +50,19 @@ path = "examples/program_examples/logging.rs"
 [[example]]
 name = "command_bar"
 path = "examples/program_examples/command_bar.rs"
+
+[[example]]
+name = "input"
+path = "examples/input.rs"
+
+[[example]]
+name = "async_input"
+path = "examples/async_input.rs"
+
+[[example]]
+name = "alternate_screen"
+path = "examples/alternate_screen.rs"
+
+[[example]]
+name = "alternate_screen_dropped"
+path = "examples/alternate_screen_dropped.rs"
